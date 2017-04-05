@@ -1,10 +1,10 @@
 name 'AAR'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Alex S'
+maintainer_email 'jalexspringer@gmail.com'
 license 'all_rights'
 description 'Installs/Configures AAR'
 long_description 'Installs/Configures AAR'
-version '0.1.0'
+version '0.2.0'
 
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
