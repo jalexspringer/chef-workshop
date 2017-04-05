@@ -4,7 +4,7 @@ maintainer_email 'jalexspringer@gmail.com'
 license 'all_rights'
 description 'Installs/Configures tomcat'
 long_description 'Installs/Configures Tomcat according to the set of instructions given by the chef workshop.'
-version '0.2.3'
+version '0.4.0'
 
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
