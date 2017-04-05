@@ -1,10 +1,10 @@
 name 'tomcat'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Alex Springer'
+maintainer_email 'jalexspringer@gmail.com'
 license 'all_rights'
 description 'Installs/Configures tomcat'
-long_description 'Installs/Configures tomcat'
-version '0.1.0'
+long_description 'Installs/Configures Tomcat according to the set of instructions given by the chef workshop.'
+version '0.2.1'
 
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
