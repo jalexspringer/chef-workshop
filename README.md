@@ -20,8 +20,17 @@ Node: Cenos7 instance on Google Cloud Compute Engine
 ### default recipe
 1. OpenJDK - package
 2. User and groups
-3. Download tomcat - remote_file
+	- The instructions do not list creating the tomcat user or group, so I added that step in.
+3. Download tomcat - remote_file (See notes)
 4. Extract files - bash
+5. Change permissions
+	- Spent a considerable amount of time with the file resource. Eventually just used bash.
+6. Add systemd unit file
+7. Reload, start, and enable systemd services
+
+### testing
+TODO: 'curl localhost:8080' to confirm setup
+TODO: confirm external access?
 
 Notes/Future Improvements:
 - Getting the tomcat file (remote_file) does not account for changes in version, location, etc. Use attributes to define these variables and make it easier to maintain this.
