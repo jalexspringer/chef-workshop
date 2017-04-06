@@ -27,13 +27,27 @@ bash 'mv AAR' do
   code <<-EOH
     mv AAR /var/www/
     EOH
-  not_if { ::File.exist?('/var/www') }
+  not_if { ::File.exist?('/var/www/AAR') }
 end
 
+# Place apache config and python script
 template '/etc/apache2/sites-enabled/AAR-apache.conf' do
   source 'AAR-apache.conf.erb'
 end
 
+template '/tmp/create_config.py' do
+  source 'create_config.py.erb'
+end
+
+# Generate AAR_config.py
+execute 'execute_py_file' do
+  cwd '/tmp'
+  command 'python create_config.py'
+end
+
+
 service 'apache2' do
   action :restart
 end
+
+
