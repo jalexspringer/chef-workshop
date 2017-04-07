@@ -100,5 +100,17 @@ bash 'bundle_install' do
   code <<-EOH
     bundle update
     bundle install
+    sudo thin install
+    sudo /usr/sbin/update-rc.d -f thin defaults
   EOH
+end
+
+template '/etc/thin/blog.conf' do
+  source 'blog.conf.erb'
+end
+template '/etc/init.d/thin' do
+  source 'thin.erb'
+end
+service 'thin' do
+  action :restart
 end
