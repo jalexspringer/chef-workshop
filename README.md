@@ -56,15 +56,14 @@ Node: Ubuntu 12.04 instance on Google Cloud Compute Engine
 
 ### default recipe
 1. Install packages
-2. Download and install ruby from source
-4. Stop apachectl service
-5. Create /etc/apache2/sites-enabled from template
-6. Generate /var/www/AAR/AAR_config.py
-7. Create DB, user, permissions
-
+2. Clone the repo
+3. Install bundle
+4. Start thin
+5. Update thin configs
 ### testing
 
 ### notes
+- User permission issues plagued me on this. Ended up creating the middleman user early, adding a file to /etc/sudoers.d/ so that it could perform the necessary tasks.
 - install from source methodology comes from: http://stackoverflow.com/questions/8530593/chef-install-and-update-programs-from-source
 
 ## AAR - AwesomeApplianceRepair
