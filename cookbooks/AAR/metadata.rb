@@ -7,7 +7,7 @@ long_description 'Installs/Configures AAR'
 version '0.3.0'
 
 depends 'mysql', '~> 8.0'
-depends 'database', '~> 1.0'
+depends 'database', '~> 6.0'
 depends 'mysql2_chef_gem', '~> 2.0'
 
 # The `issues_url` points to the location where issues for this cookbook are

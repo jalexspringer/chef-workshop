@@ -36,6 +36,37 @@ TODO: confirm external access?
 ### notes
 - Getting the tomcat file (remote_file) does not currently account for changes in version, location, etc. TODO Use attributes to define these variables and make it easier to maintain this.
 
+## Middleman 
+
+### setup
+Workstation: Centos7 vagrant box
+
+Chef Server: Hosted Chef
+
+Node: Ubuntu 12.04 instance on Google Cloud Compute Engine
+
+### steps
+
+1. Using the same workstation and Chef Server organization as above.
+3. Generate cookbook 'Middleman' on workstation - add first step of config (apt-get update)
+4. Spin up GCE instance with Ubuntu 12.04 (node)
+5. knife bootstrap on workstation with GCE ip and ssh keys, run-list[Middleman]
+6. Confirm new node in knife node list.
+7. Write up that default recipe, testing in Test Kitchen along the way.
+
+### default recipe
+1. Install packages
+2. Download and install ruby from source
+4. Stop apachectl service
+5. Create /etc/apache2/sites-enabled from template
+6. Generate /var/www/AAR/AAR_config.py
+7. Create DB, user, permissions
+
+### testing
+
+### notes
+- install from source methodology comes from: http://stackoverflow.com/questions/8530593/chef-install-and-update-programs-from-source
+
 ## AAR - AwesomeApplianceRepair
 
 ### setup
