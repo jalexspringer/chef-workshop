@@ -4,7 +4,11 @@ maintainer_email 'jalexspringer@gmail.com'
 license 'all_rights'
 description 'Installs/Configures AAR'
 long_description 'Installs/Configures AAR'
-version '0.2.2'
+version '0.3.0'
+
+depends 'mysql', '~> 8.0'
+depends 'database', '~> 1.0'
+depends 'mysql2_chef_gem', '~> 2.0'
 
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
