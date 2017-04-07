@@ -1,0 +1,10 @@
+{
+  "id": "mysql",
+  "root_password": "getthatkickassjob"
+},
+
+{
+  "id": "mysql",
+  "root_password": "imarootpassword",
+  "admin_password": "andimanadminpassword"
+}

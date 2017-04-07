@@ -1,4 +1,5 @@
 import os, sys, getpass, binascii
+import MySQLdb
 
 if __name__ == '__main__':
     with open('/var/www/AAR/AAR_config.py', 'w') as f:
@@ -13,3 +14,18 @@ if __name__ == '__main__':
     """
     
         f.write(conn_args_string + secret_key_string + database_values_string)
+
+
+    db = MySQLdb.connect(host='localhost', user='root', passwd='<%= node['AAR']['database']['dbpass'] %>')
+    sql_script = open('make_AARdb.sql', 'r').read()
+    
+    cur = db.cursor()
+    cur.execute(sql_script)
+    cur.close()
+        
+    cur = db.cursor()
+    cur.execute('use AARdb')
+    cur.execute("CREATE USER 'aarapp'@'localhost' IDENTIFIED BY %s", (appdbpw,))
+    cur.execute("GRANT CREATE,INSERT,DELETE,UPDATE,SELECT on AARdb.* to aarapp@localhost")
+    cur.close()
+    db.close()
